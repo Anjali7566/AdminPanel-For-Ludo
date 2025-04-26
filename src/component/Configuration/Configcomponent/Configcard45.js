@@ -9,9 +9,7 @@ const ConfigSupportFast = () => {
     email: 'workwithdevninja@gmail.com',
   });
 
-  const [smsData, setSmsData] = useState({
-    apiKey: 'pr6WDbeQLm1LmFKZCh13opnohNsEmyuMeTcNfNMfTbAUMgIzPyDINs4b7Pjx',
-  });
+  const [smsData, setSmsData] = useState('Hello');
 
   const handleChange = (e, setState) => {
     const { name, value } = e.target;
