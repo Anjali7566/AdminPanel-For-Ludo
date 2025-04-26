@@ -1,0 +1,101 @@
+.withdraw-requests-container {
+    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px 0 0 8px;
+    border: 2px solid #e6007a;
+    outline: none;
+  }
+  
+  .find-btn {
+    padding: 10px 16px;
+    background: #e6007a;
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+  
+  .table-wrapper {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    text-align: left;
+    color: #333;
+    padding-bottom: 10px;
+  }
+  
+  td {
+    padding: 12px 8px;
+    border-top: 1px solid #eee;
+    vertical-align: top;
+  }
+  
+  .user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .subtext {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .status-pill {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: white;
+    display: inline-block;
+  }
+  
+  .status-pill.completed {
+    background: #51d661;
+  }
+  
+  .status-pill.rejected {
+    background: #ef4444;
+  }
+  
+  .action-btn {
+    background: #1e1f4b;
+    color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
