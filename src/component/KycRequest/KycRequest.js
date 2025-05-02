@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./KycRequest.css";
 import ImageModal from "../Modal/Modal";
+import UserInfo from "../UserInfo/UserInfo";
 
 const kycRequests = [
   {
@@ -72,7 +73,7 @@ const KycRequests = () => {
     <div className="kyc-requests-container">
       <div className="header">
         <h2>User KYC</h2>
-        <div className="user-info">👤 Dev Ninja</div>
+        <div className="user-info"><UserInfo/></div>
       </div>
 
       <div className="search-bar">

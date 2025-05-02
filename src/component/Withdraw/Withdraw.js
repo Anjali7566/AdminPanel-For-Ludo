@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Withdraw.css";
 import ImageModal from "../Modal/Modal";
+import UserInfo from "../UserInfo/UserInfo";
 
 const withdraws = [
   {
@@ -13,7 +14,8 @@ const withdraws = [
     amount: "₹ 100",
     remarks: "money transferred by admin",
     status: "COMPLETED",
-    action: "APPROVED"
+    action: "APPROVED",
+    proof: "https://via.placeholder.com/150"
   },
   {
     name: "Abhishek",
@@ -25,7 +27,8 @@ const withdraws = [
     amount: "₹ 100",
     remarks: "hdfjshf",
     status: "REJECTED",
-    action: "REJECTED"
+    action: "REJECTED",
+    proof: "https://via.placeholder.com/150"
   },
   {
     name: "Lahopcb",
@@ -37,7 +40,8 @@ const withdraws = [
     amount: "₹ 100",
     remarks: "money transferred by admin",
     status: "COMPLETED",
-    action: "APPROVED"
+    action: "APPROVED",
+    proof: "https://via.placeholder.com/150"
   },
   {
     name: "nik",
@@ -49,23 +53,25 @@ const withdraws = [
     amount: "₹ 100",
     remarks: "money transferred by admin",
     status: "COMPLETED",
-    action: "APPROVED"
+    action: "APPROVED",
+    proof: "https://via.placeholder.com/150"
   }
 ];
 
 const WithdrawRequests = () => {
   const [search, setSearch] = useState("");
-  const [showModal,setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedTitle, setSelectedTitle] = useState("");
 
   const filtered = withdraws.filter((w) => w.phone.includes(search));
 
-  const openModal  =(title,image) =>{
-    setSelectedImage(title);
+  const openModal = (title, image) => {
+    setSelectedTitle(title);
     setSelectedImage(image);
     setShowModal(true);
-  }
+  };
+
   const closeModal = () => {
     setShowModal(false);
     setSelectedImage("");
@@ -76,7 +82,9 @@ const WithdrawRequests = () => {
     <div className="withdraw-requests-container">
       <div className="header">
         <h2>User Withdraws</h2>
-        <div className="user-info">👤 Dev Ninja</div>
+        <div className="user-info">
+           <UserInfo/>
+           </div>
       </div>
 
       <div className="search-bar">
@@ -138,7 +146,14 @@ const WithdrawRequests = () => {
                   </span>
                 </td>
                 <td>
-                  <button className="action-btn" onClick={()=>{openModal("Payment Proof",withdraws.Paymentproof)}}>{item.action}</button>
+                  <button
+                    className="action-btn"
+                    onClick={() => {
+                      openModal("Payment Proof", item.proof);
+                    }}
+                  >
+                    {item.action}
+                  </button>
                 </td>
               </tr>
             ))}
@@ -152,11 +167,12 @@ const WithdrawRequests = () => {
           </tbody>
         </table>
       </div>
-      <ImageModal 
-      show={showModal}
-      title="Payment Proof"
-      image={selectedImage}
-      onClose={closeModal}
+
+      <ImageModal
+        show={showModal}
+        title={selectedTitle}
+        image={selectedImage}
+        onClose={closeModal}
       />
     </div>
   );

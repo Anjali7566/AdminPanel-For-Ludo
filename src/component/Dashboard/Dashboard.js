@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 import {
-  BarChart3,
   UserPlus,
-  Wallet,
   CreditCard,
   Gamepad2,
   ShoppingCart
@@ -11,19 +9,17 @@ import {
 import CustomDateModal from "./component/CustomDate";
 
 const InfoCard = ({ title, value, icon }) => (
-  <div className="card">
-    <div className="card-content">
-      <div>
-        <p className="card-title">{title}</p>
-        <p className="card-value">{value}</p>
-      </div>
-      <div className="card-icon">{icon}</div>
+  <div className="dashboard-card">
+    <div className="dashboard-text">
+      <p className="dashboard-title">{title}</p>
+      <p className="dashboard-value">{value}</p>
     </div>
+    <div className="dashboard-icon">{icon}</div>
   </div>
 );
 
 const Dashboard = () => {
-  const [modalOpen, setModalOpen] = useState(false); // ⬅️ modal state
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="dashboard-container">
@@ -38,22 +34,20 @@ const Dashboard = () => {
       </div>
 
       <div className="cards-grid">
-        <InfoCard title="New Users" value="0 Users Joined" icon={<UserPlus className="icon-pink" />} />
-        <InfoCard title="Deposits" value="₹0 Deposits" icon={<CreditCard className="icon-pink" />} />
-        <InfoCard title="Matches" value="0 finished matches" icon={<Gamepad2 className="icon-pink" />} />
-        <InfoCard title="Admin Earnings" value="₹0 Estimated" icon={<ShoppingCart className="icon-pink" />} />
-        <InfoCard title="Withdraws" value="₹0.00 Withdraws, - Withdraw Fee" icon={<CreditCard className="icon-pink" />} />
+        <InfoCard title="New Users" value="0 Users Joined" icon={<UserPlus className="icon-white" />} />
+        <InfoCard title="Deposits" value="₹0 Deposits" icon={<CreditCard className="icon-white" />} />
+        <InfoCard title="Matches" value="0 finished matches" icon={<Gamepad2 className="icon-white" />} />
+        <InfoCard title="Admin Earnings" value="₹0 Estimated" icon={<ShoppingCart className="icon-white" />} />
+        <InfoCard title="Withdraws" value="₹0.00 Withdraws, - Withdraw Fee" icon={<CreditCard className="icon-white" />} />
 
-        <div className="card wallet-card">
-          <div className="card-content wallet-content">
-            <div>
-              <p className="card-title">Total Wallet Balance (All Users)</p>
-              <p className="wallet-value">
-                ₹358,706.09 <span className="wallet-users">268 Users Wallet</span>
-              </p>
-            </div>
-            <Wallet className="icon-pink" />
+        <div className="dashboard-total-card">
+          <div>
+            <p className="dashboard-total-amount">
+              ₹ 358,712.09 <span className="dashboard-total-users">270 Users Wallet</span>
+            </p>
+            <p className="dashboard-total-label">Total Wallet Balance (All Users)</p>
           </div>
+          <div className="dashboard-icon">💳</div>
         </div>
       </div>
 
@@ -81,7 +75,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* ⬇️ Include the modal */}
       <CustomDateModal isOpen={modalOpen} onRequestClose={() => setModalOpen(false)} />
     </div>
   );
