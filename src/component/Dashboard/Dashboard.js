@@ -6,7 +6,7 @@ import {
   Wallet,
   CreditCard,
   Gamepad2,
-  ShoppingCart
+  ShoppingCart,
 } from "lucide-react";
 import CustomDateModal from "./component/CustomDate";
 
@@ -38,18 +38,39 @@ const Dashboard = () => {
       </div>
 
       <div className="cards-grid">
-        <InfoCard title="New Users" value="0 Users Joined" icon={<UserPlus className="icon-pink" />} />
-        <InfoCard title="Deposits" value="₹0 Deposits" icon={<CreditCard className="icon-pink" />} />
-        <InfoCard title="Matches" value="0 finished matches" icon={<Gamepad2 className="icon-pink" />} />
-        <InfoCard title="Admin Earnings" value="₹0 Estimated" icon={<ShoppingCart className="icon-pink" />} />
-        <InfoCard title="Withdraws" value="₹0.00 Withdraws, - Withdraw Fee" icon={<CreditCard className="icon-pink" />} />
+        <InfoCard
+          title="New Users"
+          value="0 Users Joined"
+          icon={<UserPlus className="icon-pink" />}
+        />
+        <InfoCard
+          title="Deposits"
+          value="₹0 Deposits"
+          icon={<CreditCard className="icon-pink" />}
+        />
+        <InfoCard
+          title="Matches"
+          value="0 finished matches"
+          icon={<Gamepad2 className="icon-pink" />}
+        />
+        <InfoCard
+          title="Admin Earnings"
+          value="₹0 Estimated"
+          icon={<ShoppingCart className="icon-pink" />}
+        />
+        <InfoCard
+          title="Withdraws"
+          value="₹0.00 Withdraws, - Withdraw Fee"
+          icon={<CreditCard className="icon-pink" />}
+        />
 
         <div className="card wallet-card">
           <div className="card-content wallet-content">
             <div>
               <p className="card-title">Total Wallet Balance (All Users)</p>
               <p className="wallet-value">
-                ₹358,706.09 <span className="wallet-users">268 Users Wallet</span>
+                ₹358,706.09{" "}
+                <span className="wallet-users">268 Users Wallet</span>
               </p>
             </div>
             <Wallet className="icon-pink" />
@@ -82,7 +103,10 @@ const Dashboard = () => {
       </div>
 
       {/* ⬇️ Include the modal */}
-      <CustomDateModal isOpen={modalOpen} onRequestClose={() => setModalOpen(false)} />
+      <CustomDateModal
+        isOpen={modalOpen}
+        onRequestClose={() => setModalOpen(false)}
+      />
     </div>
   );
 };
