@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ConflictTable.css";
+import UserInfo from "../UserInfo/UserInfo";
 
 const conflictMatches = [
   {
@@ -106,7 +107,11 @@ const ConflictTable = ({ setSelectedMatch, setSelectedUser }) => {
 
   return (
     <div className="conflict-container">
+      <div className="header">
       <h2>Manage Conflicts</h2>
+      <div className="user-info"><UserInfo/></div>
+      </div>
+
 
       <div className="search-bar">
         <input

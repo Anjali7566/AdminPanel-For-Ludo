@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./CancelRequest.css";
+import UserInfo from "../UserInfo/UserInfo"; 
 
 
 const cancelRequests = [
@@ -75,7 +76,7 @@ const CancelRequests = ({ setSelectedMatch, setSelectedUser }) => {
     <div className="cancel-requests-container">
       <div className="header">
         <h2>Cancel Requests</h2>
-        <div className="user-info">👤 Dev Ninja</div>
+        <div className="user-info"><UserInfo/></div>
       </div>
 
       <div className="search-bar">
