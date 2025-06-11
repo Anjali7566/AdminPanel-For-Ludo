@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import './LoginForm.css';
 
 const LoginForm = () => {
@@ -51,4 +51,7 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginForm;*/
+
+//alag model bana padega for admin registration and login ke liye
+//then alag se data store krna padega only admins ka
