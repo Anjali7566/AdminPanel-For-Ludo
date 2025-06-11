@@ -1,3 +1,32 @@
+/* Center the heading and subtitle */
+.title, .subtitle {
+  text-align: center;
+}
+
+/* Center footer links */
+.form-footer {
+  text-align: center;
+  
+}
+
+.form-footer p {
+  margin: 0.3rem 0;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  width: 100%;
+}
+form label,
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
 .login-container {
     display: flex;
     height: 100vh;
