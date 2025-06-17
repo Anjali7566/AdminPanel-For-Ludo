@@ -1,43 +1,43 @@
-/*import React, { useState } from 'react';
-import './LoginForm.css';
+import React, { useState } from "react";
+import "./LoginForm.css";
 
 const LoginForm = () => {
-  const [formMode, setFormMode] = useState('login'); // 'login' | 'signup' | 'forgot'
-  const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [formMode, setFormMode] = useState("login"); // 'login' | 'signup' | 'forgot'
+  const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const resetFields = () => {
-    setEmail('');
-    setMobile('');
-    setPassword('');
-    setConfirmPassword('');
+    setEmail("");
+    setMobile("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formMode === 'login') {
-      if (email === 'anjukushwaha9131@gmail.com' && password === 'admin123') {
-        window.location.href = '/dashboard';
+    if (formMode === "login") {
+      if (email === "anjukushwaha9131@gmail.com" && password === "admin123") {
+        window.location.href = "/dashboard";
       } else {
-        alert('Invalid login credentials');
+        alert("Invalid login credentials");
       }
-    } else if (formMode === 'signup') {
+    } else if (formMode === "signup") {
       if (password !== confirmPassword) {
-        alert('Passwords do not match');
+        alert("Passwords do not match");
         return;
       }
 
-      console.log('User signed up:', { email, mobile, password });
-      alert('Signup successful! Please login.');
-      setFormMode('login');
+      console.log("User signed up:", { email, mobile, password });
+      alert("Signup successful! Please login.");
+      setFormMode("login");
       resetFields();
-    } else if (formMode === 'forgot') {
+    } else if (formMode === "forgot") {
       // In real app, you'd send email to reset password
       alert(`Password reset link sent to ${email}`);
-      setFormMode('login');
+      setFormMode("login");
       resetFields();
     }
   };
@@ -48,11 +48,11 @@ const LoginForm = () => {
         <div className="form-box">
           <h2 className="title">Admin Panel</h2>
           <p className="subtitle">
-            {formMode === 'login'
-              ? 'Only for authorised users'
-              : formMode === 'signup'
-              ? 'Signup to get access'
-              : 'Reset your password'}
+            {formMode === "login"
+              ? "Only for authorised users"
+              : formMode === "signup"
+              ? "Signup to get access"
+              : "Reset your password"}
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -65,7 +65,7 @@ const LoginForm = () => {
               required
             />
 
-            {formMode === 'signup' && (
+            {formMode === "signup" && (
               <>
                 <label>Mobile</label>
                 <input
@@ -78,7 +78,7 @@ const LoginForm = () => {
               </>
             )}
 
-            {formMode !== 'forgot' && (
+            {formMode !== "forgot" && (
               <>
                 <label>Password</label>
                 <input
@@ -91,7 +91,7 @@ const LoginForm = () => {
               </>
             )}
 
-            {formMode === 'signup' && (
+            {formMode === "signup" && (
               <>
                 <label>Confirm Password</label>
                 <input
@@ -105,25 +105,25 @@ const LoginForm = () => {
             )}
 
             <button type="submit">
-              {formMode === 'login'
-                ? 'LOGIN'
-                : formMode === 'signup'
-                ? 'SIGN UP'
-                : 'SEND RESET LINK'}
+              {formMode === "login"
+                ? "LOGIN"
+                : formMode === "signup"
+                ? "SIGN UP"
+                : "SEND RESET LINK"}
             </button>
           </form>
 
           <div className="form-footer">
-            {formMode === 'login' && (
+            {formMode === "login" && (
               <>
                 <p>
-                  Don't have an account?{' '}
+                  Don't have an account?{" "}
                   <span
                     onClick={() => {
-                      setFormMode('signup');
+                      setFormMode("signup");
                       resetFields();
                     }}
-                    style={{ color: 'blue', cursor: 'pointer' }}
+                    style={{ color: "blue", cursor: "pointer" }}
                   >
                     Sign up
                   </span>
@@ -131,10 +131,10 @@ const LoginForm = () => {
                 <p>
                   <span
                     onClick={() => {
-                      setFormMode('forgot');
+                      setFormMode("forgot");
                       resetFields();
                     }}
-                    style={{ color: 'blue', cursor: 'pointer' }}
+                    style={{ color: "blue", cursor: "pointer" }}
                   >
                     Forgot password?
                   </span>
@@ -142,14 +142,14 @@ const LoginForm = () => {
               </>
             )}
 
-            {(formMode === 'signup' || formMode === 'forgot') && (
+            {(formMode === "signup" || formMode === "forgot") && (
               <p>
                 <span
                   onClick={() => {
-                    setFormMode('login');
+                    setFormMode("login");
                     resetFields();
                   }}
-                  style={{ color: 'blue', cursor: 'pointer' }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   Back to Login
                 </span>
@@ -166,7 +166,7 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;*/
+export default LoginForm;
 
 //alag model bana padega for admin registration and login ke liye
 //then alag se data store krna padega only admins ka
